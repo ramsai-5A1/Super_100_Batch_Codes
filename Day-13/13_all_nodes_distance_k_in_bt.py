@@ -34,16 +34,6 @@ class Solution(object):
                 addAllKSeperated(currNode.left, rightVal[1] + 1)
                 return [True, rightVal[1] + 1]
 
-            if (leftVal[0] and leftVal[1] == k) or (rightVal[0] and rightVal[1] == k):
-                result.append(currNode.val)
-
-            
-            if leftVal[0]:
-                leftVal[1] += 1 
-                return leftVal 
-            elif rightVal[0]:
-                rightVal[1] += 1 
-                return rightVal 
             return [False, -1]
 
 
