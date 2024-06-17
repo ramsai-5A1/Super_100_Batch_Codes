@@ -1,4 +1,3 @@
-
 class Solution(object):
     def distanceK(self, root, target, k):
         result = []
@@ -24,14 +23,16 @@ class Solution(object):
             if leftVal[0]:
                 if leftVal[1] == k:
                     result.append(currNode.val)
-                addAllKSeperated(currNode.right, leftVal[1] + 1)
+                else:
+                    addAllKSeperated(currNode.right, leftVal[1] + 1)
                 return [True, leftVal[1] + 1]
 
             rightVal = helper(currNode.right)
             if rightVal[0]:
                 if rightVal[1] == k:
                     result.append(currNode.val)
-                addAllKSeperated(currNode.left, rightVal[1] + 1)
+                else:
+                    addAllKSeperated(currNode.left, rightVal[1] + 1)
                 return [True, rightVal[1] + 1]
 
             return [False, -1]
